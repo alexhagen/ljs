@@ -24,7 +24,7 @@ ljs.tonight().do(job)
 ```
 - [ ] Remoting with specific requirements
 ```python
-@ljs.remote(num_cpu=1)
+@ljs.remote(num_gpus=1)
 def deep_learning_job():
   print("categorizing puppies")
 
