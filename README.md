@@ -28,7 +28,7 @@ ljs.tonight().do(job)
 def deep_learning_job():
   print("categorizing puppies")
 
-@ljs.remote(num_cpus=4):
+@ljs.remote(num_cpus=4)
 def simulation_job():
   print("monte carlo simulations requiring a lot of cores")
 ```
