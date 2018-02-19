@@ -43,4 +43,5 @@ def job_2():
 ljs.tonight().do(job_1)
 ljs.after(job_1).do(job_2)
 ```
-- [ ] A job dashboard
+- [ ] A job dashboard (theme https://github.com/puikinsh/gentelella)
+- [ ] A ``jupyter`` widget replacing deferred jobs
