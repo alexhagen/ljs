@@ -1,2 +1,46 @@
-# ljs
-Long Job Scheduler
+# ljs - Long Job Scheduler
+
+There's a million job schedulers out there right now, but most of them focus
+on short jobs - little millisecond computations that you need to offload as
+easily as possible.  You don't want to fiddle with when to run these. But what
+I need is long job scheduling - I run 30 hour simulations pretty often.  There
+are a couple packages out there that I find useful, such as ``schedule`` and
+``ray`` for Python.  This package seeks to combine and extend these two
+packages and give a toolset for scheduling of long jobs.
+
+## Feature Set
+
+- [ ] Scheduling a'la ``schedule``
+```python
+ljs.tonight().do(job)
+```
+- [ ] Remoting a'la ``ray``
+```python
+@ljs.remote
+def job():
+  print("working");
+
+ljs.tonight().do(job)
+```
+- [ ] Remoting with specific requirements
+```python
+@ljs.remote(num_cpu=1)
+def deep_learning_job():
+  print("categorizing puppies")
+
+@ljs.remote(num_cpus=4):
+def simulation_job():
+  print("monte carlo simulations requiring a lot of cores")
+```
+- [ ] *Chaining* of commands
+```python
+def job_1():
+  print("creating data for job 2")
+
+def job_2():
+  print("doing work depending on data from job 1")
+
+ljs.tonight().do(job_1)
+ljs.after(job_1).do(job_2)
+```
+- [ ] A job dashboard
