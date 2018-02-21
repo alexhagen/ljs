@@ -2,7 +2,7 @@
 
 There's a million job schedulers out there right now, but most of them focus
 on short jobs - little millisecond computations that you need to offload as
-easily as possible.  You don't want to fiddle with when to run these. But what
+easily as possible.  You don't want to fiddle with when to run those. But what
 I need is long job scheduling - I run 30 hour simulations pretty often.  There
 are a couple packages out there that I find useful, such as ``schedule`` and
 ``ray`` for Python.  This package seeks to combine and extend these two
