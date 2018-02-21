@@ -45,3 +45,9 @@ ljs.after(job_1).do(job_2)
 ```
 - [ ] A job dashboard (theme https://github.com/puikinsh/gentelella)
 - [ ] A ``jupyter`` widget replacing deferred jobs
+- [ ] A ``jupyter`` magic for "depends" - finding jobs that depend on a file
+  and waiting until that file appears - can use a time estimate or
+  "expeonential backoff"
+- [ ] A ``jupyter`` magic for "track" - watches the output of a file and
+  decides, depending on time, size of file, or certain strings in the file
+  how much progress has been made - polling methodology
